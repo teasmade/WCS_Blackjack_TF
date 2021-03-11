@@ -1,5 +1,6 @@
 // console.log("Hello Bonjour World!");
-
+const playerName = prompt("What is the player's name?");
+const dealerName = prompt("What is the dealer's name?");
 // SETUP
 let playerScore = 0;
 let dealerScore = 0;
@@ -10,9 +11,9 @@ const dealerCard1 = dealCard();
 const dealerCard2 = dealCard();
 
 console.log("Let's start the game!");
-console.log(`Player is dealt a ${playerCard1} and a ${playerCard2}`);
+console.log(`${playerName} is dealt a ${playerCard1} and a ${playerCard2}`);
 playerScore = playerCard1 + playerCard2;
-console.log(`Dealer is dealt a ${dealerCard1} and a ${dealerCard2}`);
+console.log(`${dealerName} is dealt a ${dealerCard1} and a ${dealerCard2}`);
 dealerScore = dealerCard1 + dealerCard2;
 
 // PLAYER CONTINUE OR NOT?
@@ -20,16 +21,16 @@ playerContinue();
 
 
 function playerContinue() {
-    let continueYorN = prompt("Player, do you want another card? Type Y or N");
+    let continueYorN = prompt(`${playerName}, do you want another card? Type Y or N`);
     if (continueYorN === "Y") {
         const newPlayerCard = dealCard();
-        console.log(`OK Player, your new card is a ${newPlayerCard}`);
+        console.log(`OK ${playerName}, your new card is a ${newPlayerCard}`);
         playerScore += newPlayerCard;
         console.log(`Your score is now ${playerScore}`);
         playerContinue();
     } else {
-        console.log(`OK Player, your score is ${playerScore}`);
-        console.log("Dealer's turn to play...");
+        console.log(`OK ${playerName}, your score is ${playerScore}`);
+        console.log(`${dealerName} plays next...`);
         dealerPlay();
     }
 }
@@ -39,12 +40,12 @@ function dealerPlay() {
     // DEALER DRAWS CARDS USING THE RULES IN INSTRUCTIONS
     // if dealer total is 17 or more >>> stop
     if (dealerScore >= 17) {
-        console.log(`Dealer's score is ${dealerScore}, they have to stop.`);
+        console.log(`${dealerName}'s score is ${dealerScore}, they have to stop.`);
         endGame();
         // if dealer total is 16 or under >>> dealer takes card
     } else {
         const newDealerCard = dealCard();
-        console.log(`Dealer's new card is ${newDealerCard}`);
+        console.log(`${dealerName}'s new card is ${newDealerCard}`);
         dealerScore += newDealerCard;
         dealerPlay();
     }
@@ -59,10 +60,10 @@ function dealCard() {
 
 function endGame() {
     if (dealerScore > playerScore && dealerScore <= 21) {
-        console.log("Dealer wins!");
+        console.log(`${dealerName} wins!`);
     } else if (dealerScore === playerScore) {
         console.log("It's a draw!");
     } else {
-        console.log("Player wins!");
+        console.log(`${playerName} wins!`);
     }
 }
