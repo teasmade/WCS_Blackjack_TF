@@ -41,7 +41,6 @@ function playerContinue() {
     }
 }
 
-
 function dealerPlay() {
     // DEALER DRAWS CARDS USING THE RULES IN INSTRUCTIONS
     // if dealer total is 17 or more >>> stop
@@ -55,14 +54,12 @@ function dealerPlay() {
         dealerScore += newDealerCard;
         dealerPlay();
     }
-}    // END OF DEALER PLAY
-
+}
 
 function dealCard() {
     const newCard = Math.floor(Math.random() * 10) + 1
     return newCard;
 }
-
 
 function endGame() {
     if (dealerScore > playerScore && dealerScore <= 21) {

@@ -19,6 +19,7 @@ turnLoop() {
                 }   else (No) {
                     endPlayerTurn()
                 }
+                
         dealerTurn()
             if dealerScore >= 17 {
                 endGame()
@@ -38,9 +39,18 @@ endGame()
     }
 
 
-PAS BESOIN DE:
+# PAS BESOIN DE:
     Plusieurs tours
     Decider qui joue en premier (toujours player)
+
+# AMELIORATIONS
+    Input for names of player and dealer DONE
+    Update message for scores at the start
+    
+    Parse input for names and continue Y / N
+        Continue Y / N DONE
+
+    Continue Y or N >>> end game if player score goes over 21
 
 
 
