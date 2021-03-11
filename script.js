@@ -19,19 +19,25 @@ dealerScore = dealerCard1 + dealerCard2;
 // PLAYER CONTINUE OR NOT?
 playerContinue();
 
-
 function playerContinue() {
-    let continueYorN = prompt(`${playerName}, do you want another card? Type Y or N`);
-    if (continueYorN === "Y") {
-        const newPlayerCard = dealCard();
-        console.log(`OK ${playerName}, your new card is a ${newPlayerCard}`);
-        playerScore += newPlayerCard;
-        console.log(`Your score is now ${playerScore}`);
-        playerContinue();
-    } else {
-        console.log(`OK ${playerName}, your score is ${playerScore}`);
-        console.log(`${dealerName} plays next...`);
-        dealerPlay();
+    let continueYorN = null;
+    while (continueYorN !== "Y" || continueYorN !== "N") {
+        continueYorN = prompt(`${playerName}, do you want another card? Type Y or N`);
+        if (continueYorN === "Y") {
+            const newPlayerCard = dealCard();
+            console.log(`OK ${playerName}, your new card is a ${newPlayerCard}`);
+            playerScore += newPlayerCard;
+            console.log(`Your score is now ${playerScore}`);
+            playerContinue();
+            break;
+        } else if (continueYorN === "N") {
+            console.log(`OK ${playerName}, your score is ${playerScore}`);
+            console.log(`${dealerName} plays next...`);
+            dealerPlay();
+            break;
+        } else {
+            console.log(`You have to type Y or N!`);
+        }
     }
 }
 
