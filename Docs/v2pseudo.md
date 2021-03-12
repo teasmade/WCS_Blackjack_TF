@@ -1,17 +1,15 @@
 # Blackjack version 2
-(NEW FUNCTIONALITY NOT EXPLICIT IN INSTRUCTIONS)
 
 ### Rules Clarification from Paul
 Player has to choose 1 or 11 for ace when it is drawn
 If dealer's first card is an ace, it's worth 11
-Any subsequent dealer aces are worth 1
+(Any subsequent dealer aces are worth 1)
 
 ## Game Setup
 
 Get player name
 Get dealer name
-(Initialise overall player and dealer scores at zero)
-
+Initialise overall player and dealer scores at zero
 
 ## Round Play
 
