@@ -25,7 +25,7 @@ function splitCardName(cardString) {
 // object has to be accessed using bracket rather than dot notation, because using an expression evaluating to a string, not a variable name
 console.log(cardValues[splitCardName(testString1)]);
 
-// this won't work
+// this won't work...
 // console.log(cardValues.splitCardName(testString1));
 
 
